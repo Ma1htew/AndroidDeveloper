@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/navHome"
+    >
+
+
+    <fragment
+        android:id="@+id/navHome"
+        android:name="com.example.androiddeveloper.FragmentHome"
+        android:label="settingsFragment"
+        >
+        <action
+            android:id="@+id/action_navHome_to_navDetails"
+            app:destination="@id/navDetails" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/navDetails"
+        android:name="com.example.androiddeveloper.FragmentDetails"
+        android:label="settingsFragment"
+        >
+        <action
+            android:id="@+id/action_navDetails_to_navSettings"
+            app:destination="@id/navSettings" />
+        <action
+            android:id="@+id/action_details_back"
+            app:popUpTo="@id/navHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSettings"
+        android:name="com.example.androiddeveloper.FragmentSettings"
+        android:label="settingsFragment"
+        >>
+        <action
+            android:id="@+id/action_navSettings_to_navFirstFragment"
+            app:destination="@id/navFirstFragment" />
+    </fragment>
+        <action
+            android:id="@+id/action_navSettings_to_navDetails4"
+            app:destination="@id/navDetails" />
+    <fragment
+        android:id="@+id/navFirstFragment"
+        android:name="com.example.androiddeveloper.FirstFragment"
+        android:label="firstFragment"
+        >>
+        <action
+            android:id="@+id/action_navFirstFragment_to_navSecondFragment"
+            app:destination="@id/navSecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navSecondFragment"
+        android:name="com.example.androiddeveloper.SecondFragment"
+        android:label="secondFragment"
+        >
+        <argument
+        android:name="message"
+        app:argType="string" />
+        <action
+            android:id="@+id/action_navSecondFragment_to_navFirstFragment"
+            app:destination="@id/navFirstFragment" />
+    </fragment>
+
+
+</navigation>
